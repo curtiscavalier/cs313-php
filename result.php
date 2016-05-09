@@ -33,10 +33,10 @@ $t1 = $array[0] + "\n";
 $t2 = $array[0] + "\n";
 $t3 = $array[0] + "\n";
 $t4 = $array[0] + "\n";
-fwrite($file,$array[0]);
-fwrite($file,$array[1] );
-fwrite($file,$array[2] );
-fwrite($file,$array[3] );
+fwrite($file,$t1);
+fwrite($file,$t2 );
+fwrite($file,$t3 );
+fwrite($file,$t4);
 fclose($file);
 ?>
 </body>
