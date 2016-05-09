@@ -12,7 +12,7 @@ session_start();
 if( isset( $_SESSION['counter'] ) ) {
       echo "<center> You have already voted </center> ";
    }else {
-     
+     $_SESSION['counter'] = 1;
    
     $happy = $_POST['happy'];
     $hunger = $_POST['hunger'];
