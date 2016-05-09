@@ -19,18 +19,18 @@ while(!feof($result)){
    $var ++;
 }
 fclose($result);
-$array[0] = ($array[0]+$happy);
-$array[1] = ($array[1] + $hunger);
-$array[2] = ($array[2] + $car);
-$array[3] = ($array[3] +$student);
+$t1 = ($array[0]+$happy);
+$t2 = ($array[1] + $hunger);
+$t3 = ($array[2] + $car);
+$t4 = ($array[3] +$student);
 echo "<center>Result</center>";
 echo "<br/><center>People who are happy: ". $array[0] ."</center>";
 echo "<br/><center>People who are happy: ". $array[1] ."</center>";
 echo "<br/><center>People who are happy: ". $array[2] ."</center>";
 echo "<br/><center>People who are happy: ". $array[3] ."</center>";
 $file = fopen("result.txt","w") or die("can't open fine");
-$t1 = ($array[0] + "\n" + $array[1] + "\n" + $array[2] + "\n"; + $array[3] + "\n";
-fwrite($file,$t1);
+$final = ($t1 + "\n" + $t2 + "\n" + $t3 + "\n" + t4 + "\n");
+fwrite($file,$final);
 fclose($file);
 ?>
 </body>
