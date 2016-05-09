@@ -29,7 +29,7 @@ echo "<br/><center>People who are happy: ". $array[1] ."</center>";
 echo "<br/><center>People who are happy: ". $array[2] ."</center>";
 echo "<br/><center>People who are happy: ". $array[3] ."</center>";
 $file = fopen("result.txt","w") or die("can't open fine");
-$final = ($t1 + "\n" + $t2 + "\n" + $t3 + "\n" + t4 + "\n");
+$final = ($t1 . "\n" . $t2 . "\n" . $t3 . "\n" . $t4 . "\n");
 fwrite($file,$final);
 fclose($file);
 ?>
