@@ -8,7 +8,7 @@
 
     <body>
     <?php
-    include "libchart/classes/libchart.php";
+    include "libchart/libchart/classes/libchart.php";
     $chart = new VerticalBarChart(500, 250);
     $happy = $_POST['happy'];
     $hunger = $_POST['hunger'];
