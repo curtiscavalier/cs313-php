@@ -28,11 +28,15 @@ echo "<br/><center>People who are happy: ". $array[0] ."</center>";
 echo "<br/><center>People who are happy: ". $array[1] ."</center>";
 echo "<br/><center>People who are happy: ". $array[2] ."</center>";
 echo "<br/><center>People who are happy: ". $array[3] ."</center>";
-$file = fopen("result.txt","w+") or die("can't open fine");;
-fwrite($file,($array[0] + "\n"));
-fwrite($file,($array[1] + "\n"));
-fwrite($file,($array[2] + "\n"));
-fwrite($file,($array[3] + "\n"));
+$file = fopen("result.txt","w+") or die("can't open fine");
+$array[0] = $array[0] + "\n";
+$array[1] = $array[0] + "\n";
+$array[2] = $array[0] + "\n";
+$array[3] = $array[0] + "\n";
+fwrite($file,$array[0]);
+fwrite($file,$array[1] );
+fwrite($file,$array[2] );
+fwrite($file,$array[3] );
 fclose($file);
 ?>
 </body>
