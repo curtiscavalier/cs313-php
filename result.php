@@ -8,6 +8,12 @@
 
     <body>
     <?php
+session_start();
+if( isset( $_SESSION['counter'] ) ) {
+      echo "<center> You have already voted </center> ";
+   }else {
+     
+   
     $happy = $_POST['happy'];
     $hunger = $_POST['hunger'];
     $car = $_POST['car'];
@@ -32,6 +38,7 @@ $file = fopen("result.txt","w") or die("can't open fine");
 $final = ($t1 . "\n" . $t2 . "\n" . $t3 . "\n" . $t4 . "\n");
 fwrite($file,$final);
 fclose($file);
+   }
 ?>
 </body>
 </html>
