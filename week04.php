@@ -13,10 +13,8 @@ require('login.php');
 	if(!result){
 	die("couldn't ".mysql_error());	
 	}
-	if($result->num_row>0){
-	while($row = $result->fetch_assoc()){
-	echo "skills: ".$row[skills]."<br>";	
-	}
+	while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
+	echo "aa";	
 	}
 $conn->close();
 
