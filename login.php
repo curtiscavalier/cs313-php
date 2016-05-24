@@ -4,5 +4,7 @@
 	if(!$con){
 	die('Could not connect: ' .mysql_error());
 	}
-
+	else{
+echo "hi";
+}
 ?>
