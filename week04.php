@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Week04</title>
 </head>
-
+<p>hi</p>
 <?php
 require('login.php');
 
