@@ -8,14 +8,13 @@
 <?php
 require('login.php');
 
-	$sql = "SELECT Skills FROM Skills";
-	$result = mysql_quert($sql,$con);
-	if(!result){
-	die("couldn't ".mysql_error());	
+	$comments = mysql_query("SELECT * FROM Skills");
+	if(!comment){
+		echo "you can't ";
+	
 	}
-	while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
-	echo "aa";	
-	}
+	$row = mysql_fetch_row($comment);
+	print_r($row);
 $conn->close();
 
 ?>
