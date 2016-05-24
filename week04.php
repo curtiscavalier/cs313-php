@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Week04</title>
 </head>
-<p>hi</p>
+<p>Below are my skills as a software engineer</p>
 <?php
 require('login.php');
 
@@ -19,6 +19,7 @@ require('login.php');
 	$profile = array();
 	while (mysqli_stmt_fetch($statement)) {
 		echo $id." : ";
+		echo "</br>";
 		echo $Skills."\n";
 	
 	}
