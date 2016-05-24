@@ -8,14 +8,22 @@
 <?php
 require('login.php');
 
-	$comments = mysql_query("SELECT * FROM Skills");
-	if(!comment){
-		echo "you can't ";
+
+	$statement = mysqli_prepare($con,"SELECT * FROM Skills");
+	mysqli_stmt_bind_param($statement);
+	mysqli_stmt_execute($statement);
+	
+	mysqli_stmt_store_result($statement);
+	
+	mysqli_stmt_bind_result($statement,$id,$Skills);
+	$profile = array();
+	while (mysqli_stmt_fetch($statement)) {
+		echo $id." : ";
+		echo $Skills."\n";
 	
 	}
-	$row = mysql_fetch_row($comment);
-	print_r($row);
-$conn->close();
+	mysqli_stmt_close($statement);
+	mysqli_close($con);
 
 ?>
 <body>
