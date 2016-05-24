@@ -8,7 +8,7 @@
 <?php
 require('login.php');
 
-	$sql = "SELECT skills FROM Skills";
+	$sql = "SELECT Skills FROM Skills";
 	$result = $conn->quert($sql);
 	if($result->num_row>0){
 	while($row = $result->fetch_assoc()){
