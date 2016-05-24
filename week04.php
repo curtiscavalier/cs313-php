@@ -19,8 +19,9 @@ require('login.php');
 	$profile = array();
 	while (mysqli_stmt_fetch($statement)) {
 		echo $id." : ";
+		
+		echo $Skills;
 		echo "</br>";
-		echo $Skills."\n";
 	
 	}
 	mysqli_stmt_close($statement);
