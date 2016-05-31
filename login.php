@@ -6,7 +6,13 @@
 	die('Could not connect: ' .mysql_error());
 	}
 	
-	$statement = mysqli_prepare($con,"SELECT * FROM family");
+	$result = mysql_query("SELECT * FROM family");
+	
+	while($row = mysql_fetch_array($result,MYSQL_NUM)){
+		echo $row[1];
+	}
+	
+	/*$statement = mysqli_prepare($con,"SELECT * FROM family");
 	mysqli_stmt_bind_param($statement, "issi",$person_id, $family_name,$given_name,$generation);
 	mysqli_stmt_execute($statement);
 	
@@ -17,7 +23,7 @@
 	while ($result = mysqli_stmt_fetch($statement)) {
 		$profile = $person_id;
 	}
-	echo $profile;
+	echo $profile[0];*/
 	//echo json_encode($profile);
 	mysqli_stmt_close($statement);
 	mysqli_close($con);
