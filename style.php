@@ -1,17 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Week04</title>
-<link rel="stylesheet" type = "text/css" href ="style.php"/>
-</head>
-<p>My family</p>
-
 <?php
 header('Content-type: text/css; charset:UTF-8');
-require('login.php');
-
-
 .tree ul {
 	padding-top: 20px; position: relative;
 	
@@ -31,6 +19,8 @@ require('login.php');
 	-moz-transition: all 0.5s;
 }
 
+/*We will use ::before and ::after to draw the connectors*/
+
 .tree li::before, .tree li::after{
 	content: '';
 	position: absolute; top: 0; right: 50%;
@@ -42,15 +32,21 @@ require('login.php');
 	border-left: 1px solid #ccc;
 }
 
+/*We need to remove left-right connectors from elements without 
+any siblings*/
 .tree li:only-child::after, .tree li:only-child::before {
 	display: none;
 }
 
+/*Remove space from the top of single children*/
 .tree li:only-child{ padding-top: 0;}
 
+/*Remove left connector from first child and 
+right connector from last child*/
 .tree li:first-child::before, .tree li:last-child::after{
 	border: 0 none;
 }
+/*Adding back the vertical connector to the last nodes*/
 .tree li:last-child::before{
 	border-right: 1px solid #ccc;
 	border-radius: 0 5px 0 0;
@@ -63,6 +59,7 @@ require('login.php');
 	-moz-border-radius: 5px 0 0 0;
 }
 
+/*Time to add downward connectors from parents*/
 .tree ul ul::before{
 	content: '';
 	position: absolute; top: 0; left: 50%;
@@ -88,11 +85,12 @@ require('login.php');
 	-moz-transition: all 0.5s;
 }
 
-
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
 .tree li a:hover, .tree li a:hover+ul li a {
 	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
 }
-
+/*Connector styles on hover*/
 .tree li a:hover+ul li::after, 
 .tree li a:hover+ul li::before, 
 .tree li a:hover+ul::before, 
@@ -100,63 +98,4 @@ require('login.php');
 	border-color:  #94a0b4;
 }
 
-	/*$statement = mysqli_prepare($con,"SELECT * FROM family");
-	mysqli_stmt_bind_param($statement);
-	mysqli_stmt_execute($statement);
-	
-	mysqli_stmt_store_result($statement);
-	
-	mysqli_stmt_bind_result($statement,$id,);
-	$profile = array();
-	while (mysqli_stmt_fetch($statement)) {
-		echo $id." : ";
-		
-		echo $Skills;
-		echo "</br>";
-	
-	}
-	mysqli_stmt_close($statement);
-	mysqli_close($con);*/
-
 ?>
-<body>
-<div class="tree">
-	<ul>
-		<li>
-			<a href="#">Parent</a>
-			<ul>
-				<li>
-					<a href="#">Child</a>
-					<ul>
-						<li>
-							<a href="#">Grand Child</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Child</a>
-					<ul>
-						<li><a href="#">Grand Child</a></li>
-						<li>
-							<a href="#">Grand Child</a>
-							<ul>
-								<li>
-									<a href="#">Great Grand Child</a>
-								</li>
-								<li>
-									<a href="#">Great Grand Child</a>
-								</li>
-								<li>
-									<a href="#">Great Grand Child</a>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#">Grand Child</a></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-</body>
-</html>
