@@ -15,9 +15,10 @@
 	mysqli_stmt_bind_result($statement,$person_id,$family_name,$given_name,$generation);
 	$profile = array();
 	while (mysqli_stmt_fetch($statement)) {
-		$profile["name"] = $name;
-		$profile["password"] = $password;
-		$profile["email"] = $email;
+		$profile["person_id"] = $person_id;
+		$profile["family_name"] = $family_name;
+		$profile["given_name"] = $given_name;
+		$profile["generation"] = $generation;
 	}
 	
 	echo json_encode($profile);
