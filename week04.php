@@ -10,8 +10,9 @@
 require('login.php');
 
 ?>
-
+<?php echo $profile['name']?>
 <body>
+
 <div class="tree">
 	<ul>
 		<li>
@@ -50,5 +51,6 @@ require('login.php');
 		</li>
 	</ul>
 </div>
+
 </body>
 </html>

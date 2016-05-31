@@ -5,6 +5,22 @@
 	if(!$con){
 	die('Could not connect: ' .mysql_error());
 	}
-	else{
+	
+	$statement = mysqli_prepare($con,"SELECT * FROM family");
+	mysqli_stmt_bind_param($statement, "issi",$person_id, $family_name,$given_name,$generation);
+	mysqli_stmt_execute($statement);
+	
+	mysqli_stmt_store_result($statement);
+	
+	mysqli_stmt_bind_result($statement,$person_id,$family_name,$given_name,$generation);
+	$profile = array();
+	while (mysqli_stmt_fetch($statement)) {
+		$profile["name"] = $name;
+		$profile["password"] = $password;
+		$profile["email"] = $email;
 	}
+	
+	echo json_encode($profile);
+	mysqli_stmt_close($statement);
+	mysqli_close($con);
 ?>
