@@ -25,7 +25,7 @@
 		$fn[count] = $family_name;
 		$count ++;
 	}
-	echo "this is count 1 : ".$id[1];
+	echo "this is count 1 : ".$id["person_id"];
 	echo "This is count 0; ".$id[0];
 	
 	mysqli_stmt_close($statement);
