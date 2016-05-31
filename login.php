@@ -6,7 +6,7 @@
 	die('Could not connect: ' .mysql_error());
 	}
 	
-	$result = mysql_query("SELECT * FROM family");
+	$result = mysql_query("SELECT person_id FROM family");
 	
 	echo mysql_result($result,2);
 	
