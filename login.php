@@ -15,13 +15,10 @@
 	mysqli_stmt_bind_result($statement,$person_id,$family_name,$given_name,$generation);
 	$profile = array();
 	while ($result = mysqli_stmt_fetch($statement)) {
-		$profile["person_id"] = $person_id;
-		$profile["family_name"] = $family_name;
-		$profile["given_name"] = $given_name;
-		$profile["generation"] = $generation;
+		$profile = $person_id;
 	}
-	
-	echo json_encode($profile);
+	echo $profile;
+	//echo json_encode($profile);
 	mysqli_stmt_close($statement);
 	mysqli_close($con);
 ?>
