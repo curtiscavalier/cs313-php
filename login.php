@@ -22,10 +22,9 @@
 	$count = 0;
 	while (mysqli_stmt_fetch($statement)) {
 		$id["person_id"] = $person_id;
-		$fn[count] = $family_name;
-		$count ++;
+		echo "this is count : ".$person_id;
 	}
-	echo "this is count 1 : ".$id["person_id"];
+	
 	echo "This is count 0; ".$id[0];
 	
 	mysqli_stmt_close($statement);
