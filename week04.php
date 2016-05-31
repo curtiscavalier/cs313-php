@@ -10,7 +10,7 @@
 require('login.php');
 
 ?>
-<?php echo $profile["given_name"]?>
+/*<?php echo $profile["given_name"]?>*/
 <body>
 
 <div class="tree">
