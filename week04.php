@@ -7,31 +7,7 @@
 </head>
 <p>My family</p>
 
-<?php
-header('Content-type: text/css; charset:UTF-8');
-require('login.php');
 
-
-
-	/*$statement = mysqli_prepare($con,"SELECT * FROM family");
-	mysqli_stmt_bind_param($statement);
-	mysqli_stmt_execute($statement);
-	
-	mysqli_stmt_store_result($statement);
-	
-	mysqli_stmt_bind_result($statement,$id,);
-	$profile = array();
-	while (mysqli_stmt_fetch($statement)) {
-		echo $id." : ";
-		
-		echo $Skills;
-		echo "</br>";
-	
-	}
-	mysqli_stmt_close($statement);
-	mysqli_close($con);*/
-
-?>
 <body>
 <div class="tree">
 	<ul>
