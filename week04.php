@@ -6,7 +6,10 @@
 <link rel="stylesheet" type = "text/css" href ="style.php"/>
 </head>
 <p>My family</p>
+<?php
+require('login.php');
 
+?>
 
 <body>
 <div class="tree">
