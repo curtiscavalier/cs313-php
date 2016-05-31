@@ -19,13 +19,12 @@
 	$fn = array();
 	$gn = array();
 	$gen = array();
-	$count = 0;
+	
 	while (mysqli_stmt_fetch($statement)) {
-		$id["person_id"] = $person_id;
-		echo "this is count : ".$person_id;
+		array_push($id,$person_id);
 	}
 	
-	echo "This is count 0; ".$id[0];
+	echo "This is count 0; ".$id[1];
 	
 	mysqli_stmt_close($statement);
 	mysqli_close($con);
