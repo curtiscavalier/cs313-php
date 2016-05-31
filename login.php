@@ -8,9 +8,7 @@
 	
 	$result = mysql_query("SELECT * FROM family");
 	
-	while($row = mysql_fetch_array($result,MYSQL_NUM)){
-		echo $row[1];
-	}
+	echo mysql_result($result,2);
 	
 	/*$statement = mysqli_prepare($con,"SELECT * FROM family");
 	mysqli_stmt_bind_param($statement, "issi",$person_id, $family_name,$given_name,$generation);
