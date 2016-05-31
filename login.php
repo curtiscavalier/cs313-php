@@ -20,7 +20,7 @@
 	$gn = array();
 	$gen = array();
 	$count = 0;
-	while ($result = mysqli_stmt_fetch($statement)) {
+	while (mysqli_stmt_fetch($statement)) {
 		$id[count] = $person_id;
 		$fn[count] = $family_name;
 		$count ++;
