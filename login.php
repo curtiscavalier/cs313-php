@@ -21,7 +21,7 @@
 	$gen = array();
 	$count = 0;
 	while (mysqli_stmt_fetch($statement)) {
-		$id[count] = $person_id;
+		$id["person_id"] = $person_id;
 		$fn[count] = $family_name;
 		$count ++;
 	}
