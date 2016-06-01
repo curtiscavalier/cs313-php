@@ -8,9 +8,13 @@
 <p>My family</p>
 <?php
 require('login.php');
+$c = count($id);
 echo "<div class='tree'>";
-
-echo $marriage[3];
+while( $c > 0){
+	echo "<ul><li><a href ='#'>".$fn[$c];
+	echo "</ul></li>";
+	$c--;
+}
 ?>
 
 <body>
