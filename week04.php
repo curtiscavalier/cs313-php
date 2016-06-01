@@ -12,11 +12,6 @@ require('login.php');
 ?>
 
 <body>
-<?php
-echo "<div class='tree'>";
-echo "<li><a href='#'>Great Grand Child</a></li>";
-echo "</div>";
-?>
 <div class="tree">
 	<ul>
 		<li>
