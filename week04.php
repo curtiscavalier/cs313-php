@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Week04</title>
-
+<link rel="stylesheet" type="text/css" href="style.php">
 </head>
 <p>My family</p>
 <?php
 require('login.php');
-
+echo "<div class='tree'><ul><li>";
+echo "<a href='#'>Parent</a></ul></li>";
 ?>
 
 <body>
