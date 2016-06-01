@@ -34,6 +34,7 @@ require('login.php');
 			}
 		}
 	}
+	echo "<div class ='tree'><ul>";
 	function getChild($t){
 		global $gn;
 		global $marriage;
@@ -47,7 +48,7 @@ require('login.php');
 			getChild($re[$t]);
 		}
 		un($t);
-		echo "</li></ul>";
+		echo "</div>";
 		$c--;
 	}
 	function un($var){
