@@ -15,8 +15,9 @@ while($c > 0){
 while($gen[$c] == $gen[$c-1]){
 	echo "<ul><li><a href ='#'>".$fn[$c]." ".$fn[$c-1];
 $count++;
-
+$c--;
 }
+
 if($count>0){
 echo"</ul></li>";
 $count --;
