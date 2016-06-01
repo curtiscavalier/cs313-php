@@ -23,7 +23,7 @@ require('login.php');
 		if(($c-1)!=0){
 			if($gen[$c] == $gen[$c-1]){
 				while($gen[$c] == $gen[$c-1]){
-					echo "<li><a href ='#'>".$gn[$c]." 1 ".$fn[$c];
+					echo "<li><a href ='#'>".$gn[$c]." 1 ".$fn[$c]."</a>";
 					if(!empty($re[$c])){
 						$temp= explode(" ",$re[$c]);
 						echo "<ul>";
@@ -46,7 +46,7 @@ require('login.php');
 	if(empty($gn[$c])){
 		break;
 	}
-		echo "<li><a href ='#'>".$gn[$c]." 4 ".$fn[$c];
+		echo "<li><a href ='#'>".$gn[$c]." 4 ".$fn[$c]."</a>";
 		if(!empty($re[$c])){
 			$temp= explode(" ",$re[$c]);
 			echo "<ul>";
@@ -68,7 +68,7 @@ require('login.php');
 		if(empty($gn[$t])){
 			return;
 		}
-		echo "<li><a href ='#'>".$gn[$t]." 2 ".$fn[$t];
+		echo "<li><a href ='#'>".$gn[$t]." 2 ".$fn[$t]."</a>";
 		while ($re[$t]) {
 			echo "<ul>";
 			getChild($re[$t]);
