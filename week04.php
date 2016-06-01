@@ -13,11 +13,13 @@ $count = 0;
 echo "<div class='tree'>";
 while($c > 0){
 while($gen[$c] == $gen[$c-1]){
-	echo "<ul><li><a href ='#'>".$fn[$c]." ".$fn[$c-1];
+	echo "<ul><li><a href ='#'>".$gn[$c]." ".$fn[$c];
+	
 $count++;
 $c--;
 }
-
+echo "<ul><li><a href ='#'>".$fn[$c-1]." ".$fn[$c-1];
+echo"</ul></li>";
 if($count>0){
 echo"</ul></li>";
 $count --;
