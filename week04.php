@@ -8,12 +8,19 @@
 <p>My family</p>
 <?php
 require('login.php');
-$c = count($id);
+$c = (count($id)-1);
+$count = 0;
 echo "<div class='tree'>";
-while( $c > 0){
-	echo "<ul><li><a href ='#'>".$fn[$c];
-	echo "</ul></li>";
-	$c--;
+while($c > 0){
+while($gen[$c] == $gen[$c-1]){
+	echo "<ul><li><a href ='#'>".$fn[$c]." ".$fn[$c-1];
+$count++;
+
+}
+if(count>0){
+echo"</ul></li>";	
+}
+$c--;
 }
 ?>
 
