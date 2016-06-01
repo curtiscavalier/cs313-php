@@ -10,24 +10,34 @@
 require('login.php');
 $c = (count($id)-1);
 $count = 0;
-echo "<div class='tree'>";
-while($c > 0){
-while($gen[$c] == $gen[$c-1]){
-	echo "<ul><li><a href ='#'>".$gn[$c]." ".$fn[$c];
-	
-$count++;
-$c--;
+$final = 0;
+
+echo "<div class ='tree'><ul>";
+while($c >0 ){
+	if(($c-1)!=0){
+		while($gen[$c] == $gen[$c-1]){
+			echo "<li><a href ='#'>".$gn[$c]." ".$fn[$c];
+			if($re[$c]!=null){
+				$temp= explode(" ",$re[$c]);
+				for ($x = 0; $x <= count($temp); $x++) {
+    				getChild($x);
+				}
+			}
+		}
+	}
 }
-echo "<ul><li><a href ='#'>".$gn[$c]." ".$fn[$c];
-echo"</ul></li>";
-if($count>0){
-echo"</ul></li>";
-$count --;
-	
+function getChild($t){
+	echo "<li><a href ='#'>".$gn[$t]." ".$fn[$t];
+	un($t);
 }
-$c--;
+function un($var){
+unset($gen[$var]);
+unset($id[$var]);
+unset($gn[$var]);
+unset($fn[$var]);
+unset($re[$var]);
+unset($marriage[$var]);	
 }
-echo "</div>";
 ?>
 
 <body>
