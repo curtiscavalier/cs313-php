@@ -9,11 +9,7 @@
 <?php
 require('login.php');
 echo "<div class='tree'>";
-while($c = count($id) > 0){
-	echo "<ul><li><a href ='#'>".$fn[$c];
-	echo "</ul></li>";
-	$c--;
-}
+
 echo $marriage[0];
 ?>
 
