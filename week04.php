@@ -26,7 +26,7 @@ require('login.php');
 		if(($c-1)!=0){
 			if($gen[$c] == $gen[$c-1]){
 				while($gen[$c] == $gen[$c-1]){
-					echo "<li><a href ='#'>".$gn[$c]." 1 ".$fn[$c]."</a>";
+					echo "<li><a href ='edit.php?data=".$c."'>".$gn[$c]." 1 ".$fn[$c]."</a>";
 					if(!empty($re[$c])){
 						$temp= explode(" ",$re[$c]);
 						echo "<ul>";
