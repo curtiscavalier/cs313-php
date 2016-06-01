@@ -8,7 +8,7 @@
 
 <body>
 
-<p>My family</p>
+<p><center>My family</center></p>
 <?php
 require('login.php');
 
