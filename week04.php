@@ -14,27 +14,50 @@ require('login.php');
 	$final = 0;
 
 	echo "<div class ='tree'><ul>";
+	
 	while($c > 0 ){
+		if(empty($gn[$c])){
+			break;
+		}
+	
 		if(($c-1)!=0){
-			while($gen[$c] == $gen[$c-1]){
-				echo "<li><a href ='#'>".$gn[$c]." 1 ".$fn[$c];
-				if($re[$c]!=null){
-					$temp= explode(" ",$re[$c]);
-					$c--;
-					echo $temp[0];
-					echo "<ul>";
-					for ($x = 0; $x < count($temp); $x++) {
-	    				getChild($x);
+			if($gen[$c] == $gen[$c-1]){
+				while($gen[$c] == $gen[$c-1]){
+					echo "<li><a href ='#'>".$gn[$c]." 1 ".$fn[$c];
+					if(!empty($re[$c])){
+						$temp= explode(" ",$re[$c]);
+						echo "<ul>";
+						for ($x = 0; $x < count($temp); $x++) {
+	    					getChild($x);
+						}
 					}
-				}
-				$c--;
-				if($c == -1){
-					break;
+					un($c);
+					$c--;
+					echo "</li></ul>";
+					if($c == -1){
+						break;
+					}
 				}
 			}
 		}
+	if($c == -1){
+			break;
 	}
-	echo "<div class ='tree'><ul>";
+	if(empty($gn[$c])){
+		break;
+	}
+		echo "<li><a href ='#'>".$gn[$c]." 4 ".$fn[$c];
+		if(!empty($re[$c])){
+			$temp= explode(" ",$re[$c]);
+			echo "<ul>";
+			for ($x = 0; $x < count($temp); $x++) {
+		   		getChild($x);
+			}
+		}
+		echo "</li></ul>";
+		un($c);
+		$c--;
+	}
 	function getChild($t){
 		global $gn;
 		global $marriage;
@@ -42,14 +65,17 @@ require('login.php');
 		global $id;
 		global $re;
 		global $c;
+		if(empty($gn[$t])){
+			return;
+		}
 		echo "<li><a href ='#'>".$gn[$t]." 2 ".$fn[$t];
 		while ($re[$t]) {
 			echo "<ul>";
 			getChild($re[$t]);
 		}
 		un($t);
-		echo "</div>";
-		$c--;
+		echo "</li></ul>";
+		
 	}
 	function un($var){
 		global $gn;
@@ -64,6 +90,7 @@ require('login.php');
 	unset($re[$var]);
 	unset($marriage[$var]);
 	}	
+	echo "</div>";
 
 ?>
 
