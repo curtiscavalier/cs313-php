@@ -8,36 +8,62 @@
 <p>My family</p>
 <?php
 require('login.php');
-$c = (count($id)-1);
-$count = 0;
-$final = 0;
 
-echo "<div class ='tree'><ul>";
-while($c >0 ){
-	if(($c-1)!=0){
-		while($gen[$c] == $gen[$c-1]){
-			echo "<li><a href ='#'>".$gn[$c]." ".$fn[$c];
-			if($re[$c]!=null){
-				$temp= explode(" ",$re[$c]);
-				for ($x = 0; $x <= count($temp); $x++) {
-    				getChild($x);
+	$c = (count($id)-1);
+	$count = 0;
+	$final = 0;
+
+	echo "<div class ='tree'><ul>";
+	while($c > 0 ){
+		if(($c-1)!=0){
+			while($gen[$c] == $gen[$c-1]){
+				echo "<li><a href ='#'>".$gn[$c]." 1 ".$fn[$c];
+				if($re[$c]!=null){
+					$temp= explode(" ",$re[$c]);
+					$c--;
+					echo $temp[0];
+					echo "<ul>";
+					for ($x = 0; $x < count($temp); $x++) {
+	    				getChild($x);
+					}
+				}
+				$c--;
+				if($c == -1){
+					break;
 				}
 			}
 		}
 	}
-}
-function getChild($t){
-	echo "<li><a href ='#'>".$gn[$t]." ".$fn[$t];
-	un($t);
-}
-function un($var){
-unset($gen[$var]);
-unset($id[$var]);
-unset($gn[$var]);
-unset($fn[$var]);
-unset($re[$var]);
-unset($marriage[$var]);	
-}
+	function getChild($t){
+		global $gn;
+		global $marriage;
+		global $fn;
+		global $id;
+		global $re;
+		global $c;
+		echo "<li><a href ='#'>".$gn[$t]." 2 ".$fn[$t];
+		while ($re[$t]) {
+			echo "<ul>";
+			getChild($re[$t]);
+		}
+		un($t);
+		echo "</li></ul>";
+		$c--;
+	}
+	function un($var){
+		global $gn;
+		global $marriage;
+		global $fn;
+		global $id;
+		global $re;
+	unset($gen[$var]);
+	unset($id[$var]);
+	unset($gn[$var]);
+	unset($fn[$var]);
+	unset($re[$var]);
+	unset($marriage[$var]);
+	}	
+
 ?>
 
 <body>
