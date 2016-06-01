@@ -71,7 +71,7 @@ require('login.php');
 		if(empty($gn[$t])){
 			return;
 		}
-			echo "<li><a href ='edit.php?data=".$t."'>".$gn[$c]." 2 ".$fn[$c]."</a>";
+			echo "<li><a href ='edit.php?data=".$t."'>".$gn[$t]." 2 ".$fn[$t]."</a>";
 		if(!empty($re[$t])){
 			while ($re[$t]) {
 				echo "<ul>";

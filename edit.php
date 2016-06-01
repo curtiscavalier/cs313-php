@@ -6,5 +6,11 @@
 </head>
 
 <body>
+<?php
+	if(isset($_GET["data"]))
+	{
+		$data = $_GET["data"];
+	}
+?>
 </body>
 </html>
