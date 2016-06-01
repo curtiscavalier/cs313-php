@@ -49,7 +49,7 @@ require('login.php');
 	if(empty($gn[$c])){
 		break;
 	}
-		echo "<li><a href ='#'>".$gn[$c]." 4 ".$fn[$c]."</a>";
+			echo "<li><a href ='edit.php?data=".$c."'>".$gn[$c]." 4 ".$fn[$c]."</a>";
 		if(!empty($re[$c])){
 			$temp= explode(" ",$re[$c]);
 			echo "<ul>";
@@ -71,7 +71,7 @@ require('login.php');
 		if(empty($gn[$t])){
 			return;
 		}
-		echo "<li><a href ='#'>".$gn[$t]." 2 ".$fn[$t]."</a>";
+			echo "<li><a href ='edit.php?data=".$t."'>".$gn[$c]." 2 ".$fn[$c]."</a>";
 		if(!empty($re[$t])){
 			while ($re[$t]) {
 				echo "<ul>";
