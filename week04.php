@@ -17,9 +17,14 @@ while($gen[$c] == $gen[$c-1]){
 $count++;
 
 }
-
+if($count>0){
+echo"</ul></li>";
+$count --;
+	
+}
 $c--;
 }
+echo "</div>";
 ?>
 
 <body>
