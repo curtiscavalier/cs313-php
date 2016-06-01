@@ -9,22 +9,27 @@
 
 	
 	$statement = mysqli_prepare($con,"SELECT * FROM family");
-	mysqli_stmt_bind_param($statement, "issi",$person_id, $family_name,$given_name,$generation);
+	mysqli_stmt_bind_param($statement, "issiii",$person_id, $family_name,$given_name,$generation,$relation,$marriage_id);
 	mysqli_stmt_execute($statement);
 	
 	mysqli_stmt_store_result($statement);
 	
-	mysqli_stmt_bind_result($statement,$person_id,$family_name,$given_name,$generation);
+	mysqli_stmt_bind_result($statement,$person_id,$family_name,$given_name,$generation,$relation,$marriage_id);
 	$id = array();
 	$fn = array();
 	$gn = array();
 	$gen = array();
-	
+	$re = array();
+	$marriage = array();
 	while (mysqli_stmt_fetch($statement)) {
 		array_push($id,$person_id);
+		array_push($fn,$family_name);
+		array_push($gn,$given_name);
+		array_push($gen,$generation);
+		array_push($re,$relation);
+		array_push($marriage,$marriage_id);
 	}
 	
-	echo "This is count 0; ".$id[1];
 	
 	mysqli_stmt_close($statement);
 	mysqli_close($con);
