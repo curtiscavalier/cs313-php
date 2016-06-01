@@ -1,6 +1,5 @@
 <!doctype html>
-<html>
-<head>
+<html><head>
 <meta charset="UTF-8">
 <title>Week04</title>
 <link rel="stylesheet" type="text/css" href="style.php">
@@ -69,12 +68,15 @@ require('login.php');
 			return;
 		}
 		echo "<li><a href ='#'>".$gn[$t]." 2 ".$fn[$t]."</a>";
-		while ($re[$t]) {
-			echo "<ul>";
-			getChild($re[$t]);
+		if(!empty($re[$t])){
+			while ($re[$t]) {
+				echo "<ul>";
+				getChild($re[$t]);
+			}
+			echo "</li></ul>";
 		}
 		un($t);
-		echo "</li></ul>";
+	
 		
 	}
 	function un($var){
