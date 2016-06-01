@@ -10,7 +10,7 @@
 require('login.php');
 echo "<div class='tree'>";
 
-echo $marriage[0];
+echo $marriage[3];
 ?>
 
 <body>
