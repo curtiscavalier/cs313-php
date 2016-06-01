@@ -18,7 +18,7 @@ while($gen[$c] == $gen[$c-1]){
 $count++;
 $c--;
 }
-echo "<ul><li><a href ='#'>".$fn[$c]." ".$fn[$c];
+echo "<ul><li><a href ='#'>".$gn[$c]." ".$fn[$c];
 echo"</ul></li>";
 if($count>0){
 echo"</ul></li>";
