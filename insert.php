@@ -19,7 +19,7 @@
       $marriage = $_POST["marriage"];
       $gen = $_POST["generation"];
       $person = $_POST["person_id"];
-      $sql = "INSERT INTO family (family_name, given_name, generation,relation,marriage_id)
+      $sql = "INSERT INTO family (family_name, given_name, generation,relation_id,marriage_id)
   VALUES ('".$fn."','".$gn."','".$gen."','".$re."','".$marriage."')";
   echo $sql;
   if ($con->query($sql) === TRUE) {
