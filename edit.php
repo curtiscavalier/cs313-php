@@ -20,6 +20,15 @@
   <br>
   Last name:<br>
   <input type="text" name="lastname" value="<?php $fn[$data]?>">
+  <br>
+  relationship with(number):<br>
+  <input type="text" name="relationship" value="">
+  <br>
+  Generation:<br>
+  <input type="text" name="generation" value="">
+  <br>
+  Marriage:<br>
+  <input type="text" name="lastname" value="">
   <br><br>
   <input type="submit" value="Submit">
 </form> 
