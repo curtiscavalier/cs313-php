@@ -8,7 +8,7 @@ header('Content-type: text/css; charset:UTF-8');
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 }
-
+ul { display:table; margin:0 auto;}
 .tree li {
 	float: left; text-align: center;
 	list-style-type: none;
