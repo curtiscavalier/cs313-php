@@ -19,8 +19,8 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	$marriage = $_POST["marriage"];
 	$gen = $_POST["generation"];
 	$person = $_POST["person_id"];
-	echo $marriage;
-	if($relation = ""){
+	
+	if($relation == ""){
     $relation = "k";
 }  
 
