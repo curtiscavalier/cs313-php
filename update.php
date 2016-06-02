@@ -21,17 +21,17 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	$person = $_POST["person_id"];
 	
 	if($re == ""){
-    $re = "k";
+    $re = null;
 }  
 
-	echo $relation;
+	echo $re;
 	$sql = "UPDATE family SET given_name = '".$fn."' , family_name = '".$gn."', 
 	generation = '".$gen."', 
 	relation = '".$re.
 	"', marriage_id = '".$marriage."'
 	 WHERE person_id = '".$person."'";
 	 echo $sql;
-	if ($conn->query($sql) === TRUE) {
+	if ($con->query($sql) === TRUE) {
     echo "Record updated successfully";
 } else {
     echo "Error updating record: " . $conn->error;
