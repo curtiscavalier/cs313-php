@@ -27,7 +27,7 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	echo $re;
 	$sql = "UPDATE family SET given_name = '".$fn."' , family_name = '".$gn."', 
 	generation = '".$gen."', 
-	relation = '".$re.
+	relation_id = '".$re.
 	"', marriage_id = '".$marriage."'
 	 WHERE person_id = '".$person."'";
 	 echo $sql;
