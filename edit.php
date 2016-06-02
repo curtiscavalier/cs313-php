@@ -23,13 +23,13 @@
   <input type="text" name="lastname" value="<?php echo $fn[$data]?>">
   <br>
   relationship with(number):<br>
-  <input type="text" name="relationship" value="">
+  <input type="text" name="relationship" value = "<?php echo $re[$data]?>">
   <br>
   Generation:<br>
-  <input type="text" name="generation" value="">
+  <input type="text" name="generation" value= "<?php echo $gen[$data]?>">
   <br>
   Marriage:<br>
-  <input type="text" name="lastname" value="">
+  <input type="text" name="marriage" value= "<?php echo $marriage[$data]?>">
   <br><br>
   <input type="submit" value="Submit">
 </form> 
