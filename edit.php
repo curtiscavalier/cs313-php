@@ -14,7 +14,7 @@
 	}
 	
 ?>
-<form action="update.php">
+<form action="update.php" method = "post">
 <input type = "hidden" name = "person_id" value = "<?php echo ($data+1) ?>">
   First name:<br>
   <input type="text" name="firstname" value="<?php echo $gn[$data]?>">
