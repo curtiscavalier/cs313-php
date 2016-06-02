@@ -99,6 +99,34 @@ require('login.php');
 	echo "</div>";
 
 ?>
+<?php
+	require('login.php');
+	if(isset($_GET["data"]))
+	{
+		$data = $_GET["data"];
+	}
+	
+?>
+<p> Add a new person</p>
+<form action="update.php" method = "post">
+<input type = "hidden" name = "person_id" value = "">
+  First name:<br>
+  <input type="text" name="firstname" value="">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="">
+  <br>
+  Any children belongs to this person?:<br>
+  <input type="text" name="relationship" value = "">
+  <br>
+  Generation:<br>
+  <input type="text" name="generation" value= "">
+  <br>
+  Marriage (provide Marriage ID please):<br>
+  <input type="text" name="marriage" value= "">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
 
 </body>
 </html>
