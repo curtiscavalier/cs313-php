@@ -15,6 +15,7 @@
 	
 ?>
 <form action="action_page.php">
+<input type = "hidden" name = "person_id" value = "<?php $data ?>">
   First name:<br>
   <input type="text" name="firstname" value="<?php echo $gn[$data]?>">
   <br>
