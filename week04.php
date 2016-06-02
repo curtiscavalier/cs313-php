@@ -26,7 +26,7 @@ require('login.php');
 		if(($c-1)!=0){
 			if($gen[$c] == $gen[$c-1]){
 				while($gen[$c] == $gen[$c-1]){
-					echo "<li><a href ='edit.php?data=".$c."'>".$gn[$c]." 1 ".$fn[$c]."</a>";
+					echo "<li><a href ='edit.php?data=".$c."'>".$c.$gn[$c].$fn[$c]."</a>";
 					if(!empty($re[$c])){
 						$temp= explode(" ",$re[$c]);
 						echo "<ul>";
@@ -49,7 +49,7 @@ require('login.php');
 	if(empty($gn[$c])){
 		break;
 	}
-			echo "<li><a href ='edit.php?data=".$c."'>".$gn[$c]." 4 ".$fn[$c]."</a>";
+			echo "<li><a href ='edit.php?data=".$c."'>".$c.$gn[$c].$fn[$c]."</a>";
 		if(!empty($re[$c])){
 			$temp= explode(" ",$re[$c]);
 			echo "<ul>";
@@ -71,7 +71,7 @@ require('login.php');
 		if(empty($gn[$t])){
 			return;
 		}
-			echo "<li><a href ='edit.php?data=".$t."'>".$gn[$t]." 2 ".$fn[$t]."</a>";
+			echo "<li><a href ='edit.php?data=".$t."'>".$t.$gn[$t].$fn[$t]."</a>";
 		if(!empty($re[$t])){
 			while ($re[$t]) {
 				echo "<ul>";

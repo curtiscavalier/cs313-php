@@ -16,10 +16,10 @@
 ?>
 <form action="action_page.php">
   First name:<br>
-  <input type="text" name="firstname" value="<?php $gn[$data]?>">
+  <input type="text" name="firstname" value="<?php echo $gn[$data]?>">
   <br>
   Last name:<br>
-  <input type="text" name="lastname" value="<?php $fn[$data]?>">
+  <input type="text" name="lastname" value="<?php echo $fn[$data]?>">
   <br>
   relationship with(number):<br>
   <input type="text" name="relationship" value="">
