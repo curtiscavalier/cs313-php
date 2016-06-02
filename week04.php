@@ -107,8 +107,10 @@ require('login.php');
 	}
 	
 ?>
+
+<div class "form">
 <p> Add a new person</p>
-<form action="update.php" method = "post">
+<form action="insert.php" method = "post">
 <input type = "hidden" name = "person_id" value = "">
   First name:<br>
   <input type="text" name="firstname" value="">
@@ -127,6 +129,6 @@ require('login.php');
   <br><br>
   <input type="submit" value="Submit">
 </form> 
-
+</div>
 </body>
 </html>

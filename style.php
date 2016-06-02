@@ -67,7 +67,13 @@ right connector from last child*/
 	border-left: 1px solid #ccc;
 	width: 0; height: 20px;
 }
-
+div.form{
+ position: absolute;
+    bottom: 70px;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #8AC007;
+}
 .tree li a{
 	border: 1px solid #ccc;
 	padding: 5px 10px;
