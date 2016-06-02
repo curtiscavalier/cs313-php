@@ -16,7 +16,7 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	{
 		$gn = $_POST['firstname'];
 	}
-	$gn = $_POST["firstname"];
+	
 	$fn = $_POST["lastname"];
 	$re = $_POST["relationship"];
 	$marriage = $_POST["marriage"];
