@@ -24,6 +24,7 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	relation = '".$re.
 	"', marriage_id = '".$marriage."'
 	 WHERE person_id = '".$person."'";
+	 echo $sql;
 	if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
 } else {
