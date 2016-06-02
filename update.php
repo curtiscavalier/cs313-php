@@ -12,7 +12,10 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	if(!$con){
 	die('Could not connect: ' .mysql_error());
 	}
-	
+	if(isset($_POST["firstname"]))
+	{
+		$gn = $_POST["firstname"];
+	}
 	$gn = $_POST["firstname"];
 	$fn = $_POST["lastname"];
 	$re = $_POST["relationship"];
