@@ -19,6 +19,8 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	$marriage = $_POST["marriage"];
 	$gen = $_POST["generation"];
 	$person = $_POST["person_id"];
+	echo $person;
+	echo $gn;
 	$sql = "UPDATE family SET given_name = '".$fn."' , family_name = '".$fn."', 
 	generation = '".$gen."', 
 	relation = '".$re.
