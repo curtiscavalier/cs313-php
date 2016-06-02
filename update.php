@@ -20,7 +20,7 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 	$gen = $_POST["generation"];
 	$person = $_POST["person_id"];
 	echo $marriage;
-	if(empty($marriage)){
+	if($marriage = ""){
     $marriage = "k";
 }  
 if("" == trim($_POST['relationship'])){
