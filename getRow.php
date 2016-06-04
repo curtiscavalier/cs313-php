@@ -25,7 +25,7 @@ $con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
 		$profile["person_id"] = $person_id;
 		$profile["family_name"] = $family_name;
 		$profile["given_name"] = $given_name;
-		$profile["$gen"] = $gen;
+		$profile["$gen"] = $generation;
 		$profile["re"] = $relation;
 		$profile["marriage"] = $marriage_id;
 	}

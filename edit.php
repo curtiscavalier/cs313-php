@@ -18,7 +18,7 @@
 <form action="update.php" method = "post">
 <input type = "hidden" name = "person_id" value = "<?php echo $profile["person_id"] ?>">
   First name:<br>
-  <input type="text" name="firstname" value="<?php echo $orofile["given_name"]?>">
+  <input type="text" name="firstname" value="<?php echo $profile["given_name"]?>">
   <br>
   Last name:<br>
   <input type="text" name="lastname" value="<?php echo $profile["family_name"]?>">
