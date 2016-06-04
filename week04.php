@@ -12,7 +12,72 @@
 <?php
 require('login.php');
 
-	$c = (count($id)-1);
+echo "<div class ='tree'>";;
+	$size = (count($id)-1);
+	for ($i =$size;$i >= 0;$i--) {
+		if(empty($gen)){
+			break;
+		}
+		
+		if($gen[$i] == max($gen))
+		{
+			echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i]." ".$fn[$i]."</a>";
+			if(!empty($re[$i])){
+				$temp= explode(" ",$re[$i]);
+			
+				for ($x = 0; $x < count($temp); $x++) {
+		    		getChild($temp[$x]);
+				}
+			}
+			un($i);
+			echo "</li></ul>";
+		}
+	}
+	mysqli_stmt_close($statement);
+	mysqli_close($con);
+	function un($var){
+		
+		global $gn;
+		global $marriage;
+		global $fn;
+		global $id;
+		global $re;
+		global $gen;
+	unset($gen[$var]);
+	unset($id[$var]);
+	unset($gn[$var]);
+	unset($fn[$var]);
+	unset($re[$var]);
+	unset($marriage[$var]);
+	unset($gen[$var]);
+	}
+	
+	
+	function getChild($t){
+		global $gn;
+		global $marriage;
+		global $fn;
+		global $id;
+		global $re;
+		global $size;
+		for ($i = 0; $i <= $size; $i++) {
+			if($id[$i] == $t)
+			{
+				echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i].$fn[$i]."</a></li>";
+				if(!empty($re[$i])){
+					while ($re[$i]) {
+						getChild($re[$i]);
+					}
+					echo "</li></ul>";
+				}
+				echo "</ul>";
+				un($i);
+			   return;
+			}
+		}
+	}
+		echo "</div>";
+	/*$c = (count($id)-1);
 	$count = 0;
 	$final = 0;
 
@@ -97,7 +162,7 @@ require('login.php');
 	unset($marriage[$var]);
 	}	
 	echo "</div>";
-
+*/
 ?>
 <?php
 	require('login.php');
