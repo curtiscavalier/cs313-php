@@ -10,7 +10,7 @@
 	{
 		$data = $_POST["person_id"];
 	}
-		$statement = mysqli_prepare($con,"SELECT * FROM person_name WHERE person_id = '".$data."'");
+		$statement = mysqli_prepare($con,"SELECT * FROM person_name WHERE person_id = '1'");
 	mysqli_stmt_bind_param($statement, "iiss",$person_name_id,$person_id, $family_name,$given_name);
 	mysqli_stmt_execute($statement);
 	
