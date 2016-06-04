@@ -19,7 +19,7 @@ if(isset($_POST["person_id"]))
 		}
 		$sql = "DELETE FROM family WHERE person_id = '".$data."'";
 		echo $sql;
-		if ($conn->query($sql) === TRUE) {
+		if ($con->query($sql) === TRUE) {
     echo "Record deleted successfully";
 } else {
     echo "Error deleting record: " . $conn->error;
