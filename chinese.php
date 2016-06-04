@@ -10,26 +10,28 @@
 	{
 		$data = $_POST["person_id"];
 	}
-		$statement = mysqli_prepare($con,"SELECT * FROM person_name WHERE person_id = '1'");
-	mysqli_stmt_bind_param($statement, "iiss",$person_name_id,$person_id, $family_name,$given_name);
-	mysqli_stmt_execute($statement);
-	
-	mysqli_stmt_store_result($statement);
-	
-	mysqli_stmt_bind_result($statement,$person_name_id,$person_id, $family_name,$given_name);
-	$profile = array();
-	echo $person_name_id;
-while (mysqli_stmt_fetch($statement)) {
-		$profile["person_id"] = $person_id;
-		$profile["family_name"] = $family_name;
-		$profile["given_name"] = $given_name;
-		$profile["gen"] = $generation;
-		$profile["re"] = $relation;
-		$profile["marriage"] = $marriage_id;
-	}
-	
-	mysqli_stmt_close($statement);
-	mysqli_close($con);
+		$con=mysqli_connect("www.secretvoice1.com","secretvo_11","c12345");
+		mysqli_select_db($con, "secretvo_11");
+		if(!$con){
+		die('Could not connect: ' .mysql_error());
+		}
+		echo $data;
+		$statement = mysqli_prepare($con,"SELECT * FROM person_name WHERE person_id = '".$data."'");
+		mysqli_stmt_bind_param($statement, "iiss",$person_name_id, $person_id,$family_name,$given_name);
+		mysqli_stmt_execute($statement);
+		
+		mysqli_stmt_store_result($statement);
+		
+		mysqli_stmt_bind_result($statement,$person_name_id, $person_id,$family_name,$given_name);
+		$profile = array();
+		while (mysqli_stmt_fetch($statement)) {
+			$profile["person_id"] = $person_id;
+			$profile["family_name"] = $family_name;
+			$profile["given_name"] = $given_name;
+		}
+	echo $person_id;
+		mysqli_stmt_close($statement);
+		mysqli_close($con);	
 ?>
 <body>
 <form >
