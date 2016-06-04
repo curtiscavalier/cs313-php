@@ -18,6 +18,7 @@ if(isset($_POST["person_id"]))
 		die('Could not connect: ' .mysql_error());
 		}
 		$sql = "DELETE FROM family WHERE person_id = '".$data."'";
+		echo $sql;
 		if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
 } else {
