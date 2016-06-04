@@ -12,44 +12,32 @@
 <?php
 require('login.php');
 
-
-	getALL();
-	
-	function getALL() {
-		global $gn;
-		global $marriage;
-		global $fn;
-		global $id;
-		global $re;
-		global $gen;
-		echo "<div class =\"tree\">";
-		$size = (count($id)-1);
-		for ($i =$size;$i >= 0;$i--) {
-			if(empty($gen)){
-				break;
+echo "<div class =\"tree\">";
+	$size = (count($id)-1);
+	for ($i =$size;$i >= 0;$i--) {
+		if(empty($gen)){
+			break;
+		}
+		
+		if($gen[$i] == max($gen))
+		{
+			
+			echo "<ul><li><a href =\"edit.php?data=".$id[$i]."\">".$id[$i]." ".$gn[$i]." ".$fn[$i]."</a>";
+			if(!empty($re[$i])){
+				$temp= explode(" ",$re[$i]);
+				echo "<ul>";
+				for ($x = 0; $x < count($temp); $x++) {
+				
+		    		getChild($temp[$x]);
+				}
+				echo "</ul>";
 			}
 			
-			if($gen[$i] == max($gen))
-			{
-				
-				echo "<ul><li><a href =\"edit.php?data=".$id[$i]."\">".$id[$i]." ".$gn[$i]." ".$fn[$i]."</a>";
-				if(!empty($re[$i])){
-					$temp= explode(" ",$re[$i]);
-					echo "<ul>";
-					for ($x = 0; $x < count($temp); $x++) {
-					
-			    		getChild($temp[$x]);
-					}
-					echo "</ul>";
-				}
-				
-				un($i);
-				echo "</li></ul>";
-			}
+			un($i);
+			echo "</li></ul>";
 		}
+		
 	}
-	
-
 	mysqli_stmt_close($statement);
 	mysqli_close($con);
 	function un($var){
@@ -98,6 +86,7 @@ require('login.php');
 		}
 	}
 		echo "</div>";
+
 
 ?>
 <?php
