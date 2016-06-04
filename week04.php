@@ -9,6 +9,8 @@
 <body>
 
 <p><center>My family</center></p>
+<p><center>The number next to it is a person id, i use that to reference the records in the database</center></p>
+<p><center>relation id is a way to tell me which child(person id) does this person has and i use space to seperate each one</center></p>
 <?php
 require('login.php');
 

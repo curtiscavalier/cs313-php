@@ -29,10 +29,18 @@
   Generation:<br>
   <input type="text" name="generation" value= "<?php echo $profile["gen"] ?>">
   <br>
-  Marriage:<br>
+  This person is married to:<br>
   <input type="text" name="marriage" value= "<?php echo $profile["marriage"] ?>">
   <br><br>
   <input type="submit" value="Submit">
 </form> 
+<form action = "chinese.php" method = "post">
+<input type = "hidden" name = "person_id" value = "<?php echo $profile["person_id"] ?>">
+<input type="submit" value="Look at a different language">
+</form>
+<form action = "delete.php" method = "post">
+<input type = "hidden" name = "person_id" value = "<?php echo $profile["person_id"] ?>">
+<input type="submit" value="delete this person">
+</form>
 </body>
 </html>

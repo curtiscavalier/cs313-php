@@ -29,7 +29,9 @@ while (mysqli_stmt_fetch($statement)) {
 		$profile["re"] = $relation;
 		$profile["marriage"] = $marriage_id;
 	}
-	echo "this".$profile["gen"];
+	
+	mysqli_stmt_close($statement);
+	mysqli_close($con);
 ?>
 <body>
 </body>
