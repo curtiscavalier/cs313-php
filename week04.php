@@ -21,16 +21,35 @@ echo "<div class ='tree'>";;
 		
 		if($gen[$i] == max($gen))
 		{
+			if(!empty($marriage[$i])){
 			echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i]." ".$fn[$i]."</a>";
+			}
+			else {
+				$data = $marriage[$i];
+				require('getRow.php');
+				echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i]." ".$fn[$i]." married ".
+				$profile["person_id"].$profile["given_name"]."</a>";
+			}
 			if(!empty($re[$i])){
 				$temp= explode(" ",$re[$i]);
 			
 				for ($x = 0; $x < count($temp); $x++) {
 		    		getChild($temp[$x]);
 				}
-			}
-			un($i);
+				un($i);
 			echo "</li></ul>";
+			}
+			if(!empty($marriage[$i])){
+				$temp= explode(" ",$profile["re"]);
+			
+				for ($x = 0; $x < count($temp); $x++) {
+		    		getChild($temp[$x]);
+				}
+				un($i);
+			echo "</li></ul>";
+			
+			}
+			
 		}
 	}
 	mysqli_stmt_close($statement);
