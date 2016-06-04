@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head>
 <meta charset="UTF-8">
-<title>Week04</title>
+<title>My family tree</title>
 <link rel="stylesheet" type="text/css" href="style.php">
 </head>
 
