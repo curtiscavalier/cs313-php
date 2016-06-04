@@ -18,6 +18,7 @@
 		mysqli_stmt_store_result($statement);
 		
 		mysqli_stmt_bind_result($statement,$person_name_id, $person_id,$family_name,$given_name);
+		echo $family_name
 		$profile = array();
 		while (mysqli_stmt_fetch($statement)) {
 			$profile["person_id"] = $person_id;
