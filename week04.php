@@ -47,13 +47,7 @@ echo "<div class ='tree'>";;
 				}
 				un($i);
 			echo "</li></ul>";
-			for ($k = 0; $k <= $size; $k++) {
-			if($id[$k] == $marriage[$i])
-			{
-			un($k);	
-			}
 			
-			}
 			
 		}
 	}
@@ -187,6 +181,7 @@ echo "<div class ='tree'>";;
 	}	
 	echo "</div>";
 */
+	}
 ?>
 <?php
 	require('login.php');
