@@ -12,43 +12,44 @@
 <?php
 require('login.php');
 
-echo "<div class ='tree'>";;
-	$size = (count($id)-1);
-	for ($i =$size;$i >= 0;$i--) {
-		if(empty($gen)){
-			break;
-		}
-		
-		if($gen[$i] == max($gen))
-		{
-			if(!empty($marriage[$i])){
-			echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i]." ".$fn[$i]."</a>";
+
+	getALL();
+	
+	function getALL() {
+		global $gn;
+		global $marriage;
+		global $fn;
+		global $id;
+		global $re;
+		global $gen;
+		echo "<div class =\"tree\">";
+		$size = (count($id)-1);
+		for ($i =$size;$i >= 0;$i--) {
+			if(empty($gen)){
+				break;
 			}
-			else {
-				$data = $marriage[$i];
-				require('getRow.php');
-				echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i]." ".$fn[$i]." married ".
-				$profile["person_id"].$profile["given_name"]."</a>";
-			}
-			if(!empty($re[$i])){
-				$temp= explode(" ",$re[$i]);
 			
-				for ($x = 0; $x < count($temp); $x++) {
-		    		getChild($temp[$x]);
+			if($gen[$i] == max($gen))
+			{
+				
+				echo "<ul><li><a href =\"edit.php?data=".$id[$i]."\">".$id[$i]." ".$gn[$i]." ".$fn[$i]."</a>";
+				if(!empty($re[$i])){
+					$temp= explode(" ",$re[$i]);
+					echo "<ul>";
+					for ($x = 0; $x < count($temp); $x++) {
+					
+			    		getChild($temp[$x]);
+					}
+					echo "</ul>";
 				}
+				
 				un($i);
-			echo "</li></ul>";
+				echo "</li></ul>";
 			}
-			if(!empty($marriage[$i])){
-				$temp= explode(" ",$profile["re"]);
-			
-				for ($x = 0; $x < count($temp); $x++) {
-		    		getChild($temp[$x]);
-				}
-			}
-			
 		}
 	}
+	
+
 	mysqli_stmt_close($statement);
 	mysqli_close($con);
 	function un($var){
@@ -79,21 +80,25 @@ echo "<div class ='tree'>";;
 		for ($i = 0; $i <= $size; $i++) {
 			if($id[$i] == $t)
 			{
-				echo "<ul><li><a href ='edit.php?data=".$id[$i]."'>".$id[$i]." ".$gn[$i].$fn[$i]."</a></li>";
+				echo "<li><a href =\"edit.php?data=".$id[$i]."\">".$id[$i]." ".$gn[$i].$fn[$i]."</a>";
 				if(!empty($re[$i])){
 					while ($re[$i]) {
+						echo "<ul>";
 						getChild($re[$i]);
 					}
-					echo "</li></ul>";
+					
 				}
-				echo "</ul>";
+				else {
+					echo "</li>";
+				}
+				
 				un($i);
 			   return;
 			}
 		}
 	}
 		echo "</div>";
-	
+
 ?>
 <?php
 	require('login.php');
