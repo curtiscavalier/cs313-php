@@ -29,7 +29,8 @@
 			$profile["family_name"] = $family_name;
 			$profile["given_name"] = $given_name;
 		}
-	echo $person_id;
+	echo $person_id."<<<";
+	echo $profile["given_name"];
 		mysqli_stmt_close($statement);
 		mysqli_close($con);	
 ?>
